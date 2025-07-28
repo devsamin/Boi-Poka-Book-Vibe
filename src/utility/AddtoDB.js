@@ -21,7 +21,7 @@ const addTostorReadlist = (id) =>{
         localStorage.setItem('Read-List', StorstrlistItem)
     }
 }
-export {addTostorReadlist}
+export {addTostorReadlist, getStorReadlist}
 
 const getStorWshislist = () =>{
     const StorItem = localStorage.getItem('Wish-List')
@@ -46,4 +46,4 @@ const addTostorWishlist = (id) =>{
         localStorage.setItem('Wish-List', StorWushlistItem)
     }
 }
-export {addTostorWishlist}
+export {addTostorWishlist, getStorWshislist}

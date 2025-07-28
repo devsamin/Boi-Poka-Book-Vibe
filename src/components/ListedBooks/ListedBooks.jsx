@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getStorReadlist } from "../../utility/AddtoDB";
-import { key } from "localforage";
 import Book from "../Book/Book";
 
 const ListedBooks = () => {

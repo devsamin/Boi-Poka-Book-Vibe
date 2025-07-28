@@ -1,3 +1,5 @@
+import { toast } from "react-toastify"
+
 const getStorReadlist = () =>{
     const StorItem = localStorage.getItem('Read-List')
     if(StorItem){
@@ -13,12 +15,14 @@ const getStorReadlist = () =>{
 const addTostorReadlist = (id) =>{
     const StorlistItem = getStorReadlist()
     if(StorlistItem.includes(id)){
-        console.log('Do not stor this item already exist')
+        // console.log('Do not stor this item already exist')
+         toast("Do not stor this item already exist")
     }
     else{
         StorlistItem.push(id)
         const StorstrlistItem = JSON.stringify(StorlistItem)
         localStorage.setItem('Read-List', StorstrlistItem)
+        toast("This Book has been added successfully")
     }
 }
 export {addTostorReadlist, getStorReadlist}
@@ -38,12 +42,14 @@ const getStorWshislist = () =>{
 const addTostorWishlist = (id) =>{
     const StorlistItem = getStorWshislist()
     if(StorlistItem.includes(id)){
-        console.log('Do not stor this item already exist')
+        // console.log('Do not stor this item already exist')
+       
     }
     else{
         StorlistItem.push(id)
         const StorWushlistItem = JSON.stringify(StorlistItem)
         localStorage.setItem('Wish-List', StorWushlistItem)
+        
     }
 }
 export {addTostorWishlist, getStorWshislist}

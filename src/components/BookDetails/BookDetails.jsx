@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addTostorReadlist, addTostorWishlist } from '../../utility/AddtoDB';
 
 const BookDetails = () => {
     const {bookId} = useParams()
@@ -7,13 +8,27 @@ const BookDetails = () => {
     // console.log(bookId)
     const data = useLoaderData()
     const book = data.find(book => book.bookId === id)
+    const {image, bookName } = book
+
     // console.log(typeof(bookId))
     // console.log(typeof(data[0].bookId))
-    console.log(book)
-    console.log(data)
+    // console.log(book)
+    // console.log(data)
+    const hendalmarkAsread = (id) =>{
+        addTostorReadlist(id)
+    }
+    const hendalWishlist = (id) =>{
+        addTostorWishlist(id)
+    }
     return (
         <div>
             <h3>Book Details : {bookId}</h3>
+            < img className='w-60' src={image} alt="" />
+            <h3>{bookName}</h3>
+            <div className='flex gap-3 my-7'>
+                <button onClick={()=>hendalmarkAsread(id)} className="btn btn-outline btn-accent">Marks As Read</button>
+            <button onClick={()=> hendalWishlist(id)} className="btn btn-outline btn-secondary">Add Wish List </button>
+            </div>
         </div>
     );
 };

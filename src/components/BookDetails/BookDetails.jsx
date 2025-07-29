@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { addTostorReadlist, addTostorWishlist } from '../../utility/AddtoDB';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetails = () => {
     const {bookId} = useParams()
@@ -22,6 +23,9 @@ const BookDetails = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Book Details {bookId}</title>
+            </Helmet>
             <h3>Book Details : {bookId}</h3>
             < img className='w-60' src={image} alt="" />
             <h3>{bookName}</h3>

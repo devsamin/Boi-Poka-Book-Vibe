@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getStorReadlist } from "../../utility/AddtoDB";
 import Book from "../Book/Book";
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
   const allbooks = useLoaderData();
@@ -30,6 +31,9 @@ const ListedBooks = () => {
  }
   return (
     <div>
+      <Helmet>
+        <title>Listed Books</title>
+      </Helmet>
       <h2>{allbooks.length}</h2>
       <div>
         <div className="dropdown">
